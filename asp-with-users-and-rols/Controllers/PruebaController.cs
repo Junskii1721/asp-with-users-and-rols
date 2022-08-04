@@ -13,5 +13,10 @@ namespace asp_with_users_and_rols.Controllers
         {
             return View();
         }
+
+        public ActionResult Prueba()
+        {
+            return View();
+        }
     }
 }
