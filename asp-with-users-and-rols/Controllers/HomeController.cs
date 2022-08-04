@@ -9,7 +9,7 @@ namespace asp_with_users_and_rols.Controllers
 {
     public class HomeController : Controller
     {
-        // Hola 
+        // Este es otro cambio
         [AuthorizeUser(idOperacion:1)]
         public ActionResult Index()
         {
