@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Inicio de sesión";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<style>
+    .color-pastel {
+        color: purple;
+    }
+
+        .color-pastel .btn-default {
+            color: purple;
+            background: none;
+        }
+
+    .contenedor-login {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+    }
+
+    .wrapper-login {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .formLogin {
+        width: fit-content;
+        box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 10%);
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+
+        .formLogin .form-group,
+        .formLogin input {
+            width: 100% !important;
+        }
+
+    .label-default {
+        background-color: transparent;
+    }
+
+    .titulo-login {
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .alert-danger {
+        border-radius: 5px;
+        width: fit-content;
+        padding: 5px 10px;
+        box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 10%);
+        margin: 0px auto;
+    }
+</style>
+
+<div class="contenedor-login">
+
+    <div class="wrapper-login">
+
+        <h1 class="titulo-login color-pastel">Inicio de sesión</h1>
+
+        <form class="formLogin" action="@Url.Content("~/Acceso/Login")" method="post">
+            <div class="form-group">
+                <label class="label-default color-pastel" for="user">Usuario</label>
+                <input class="form-control" type="text" id="email" name="email" placeholder="Ingresa su email" />
+            </div>
+            <div class="form-group">
+                <label class="label-default color-pastel" for="pass">Contraseña</label>
+                <input class="form-control" type="password" id="pass" name="pass" placeholder="Ingresa su contraseña" />
+            </div>
+            <div class="form-group color-pastel">
+                <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+            </div>
+            <div class="form-group">
+
+            </div>
+        </form>
+
+        <div class="alert-danger">
+            @ViewBag.Error
+        </div>
+    </div>
+
+</div>
